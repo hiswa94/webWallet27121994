@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Lenovo A7000",
+    "price": 130,
+    "popular": true,
+    "date": 9999999203
+  },
+  {
+    "name": "Motorola MOTO G",
+    "price": 200,
+    "popular": true,
+    "date": 1467440207
+  },
+  {
+    "name": "Samsung Galaxy S5",
+    "price": 310,
+    "popular": true,
+    "date": 146744727
+  },
+  {
+    "name": "Samsung Galaxy J5 ",
+    "price": 200,
+    "popular": true,
+    "date": 1467440227
+  },
+  {
+    "name": "Apple iPhone 5s",
+    "price": 340,
+    "popular": true,
+    "date": 14674402037
+  },
+  {
+    "name": "HTC Desire 526G Dual",
+    "price": 220,
+    "popular": false,
+    "date": 9999999203
+  },
+  {
+    "name": "Sony Xperia XA Dual",
+    "price": 340,
+    "popular": true,
+    "date": 99999992037
+  },
+  {
+    "name": "LG K7 X210",
+    "price": 130,
+    "popular": true,
+    "date": 9999999203
+  },
+  {
+    "name": "Motorola MOTO G4 Plus",
+    "price": 320,
+    "popular": false,
+    "date": 9999999203
+  },
+  {
+    "name": "Lenovo Vibe S1",
+    "price": 240,
+    "popular": true,
+    "date": 9999999203
+  },
+  {
+    "name": "HTC Desire 820G ",
+    "price": 200,
+    "popular": false,
+    "date": 99999992037
+  }
+]
