@@ -1,4 +1,72 @@
-<h2>Latest models</h2>
+<!--Date&time picker -->
+   <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+               <label for="datetimepicker2">Date and time:</label>
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    locale: 'ru'
+                });
+            });
+        </script>
+    </div>
+</div>
+
+<!--Category -->
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+      <b>Category</b>
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> <b>category1</b> </a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> <b>category2</b> </a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> <b>category3</b> </a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> <em>Separated link</em> </a></li>
+  </ul>
+</div>
+
+<!--Sum -->
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+           <label for="sum">Sum:</label>
+            <div class="input-group input-group-sm">
+             <input type="text" class="form-control" id=sum placeholder="Введіть витрачену суму. Наприклад 99.99">
+             <span class="input-group-addon">$</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Comments -->
+<div class="container">
+  <form role="form">
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+  </form>
+</div>
+
+<!--Buttons -->
+<a ui-sref="profit" class="btn btn-success">Add</a>
+    <a ui-sref="profit" class="btn btn-danger">Cancel</a>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!--<h2>Latest models</h2>
 
 <table class="table table-hover table-striped table-bordered">
     <thead>
@@ -21,4 +89,4 @@
     </tr>
 
     </tbody>
-</table>
+</table>-->

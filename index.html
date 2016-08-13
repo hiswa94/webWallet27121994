@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
+   <title>WEB Wallet Example</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 </head>
 
 <body ng-app="catalogApp" ng-controller="dashboardCtrl as ctrl">
 
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+       <div class="container">
+            <div class="navbar-header">
             <a class="navbar-brand" ui-sref="home">WEB Wallet</a>
         </div>
         <ul class="nav navbar-nav">
             <li><a ui-sref="home">Home</a></li>
             <li><a ui-sref="costs">Costs</a></li>
-            <li><a ui-sref="profits">Profits</a></li><li><a ui-sref="balance">Balance</a></li>
+            <li><a ui-sref="profits">Profits</a></li>
+            <li><a ui-sref="balance">Balance</a></li>
             <li><a ui-sref="about">About</a></li>
         </ul>
+         </div>
     </nav>
 
     <div class="container">
@@ -31,6 +36,15 @@
     <script src="http://code.angularjs.org/1.5.1/angular.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <script src="js/library/underscore-min.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/js/transition.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/js/dropdown.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/js/collapse.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap-datetimepicker.min.js"></script>
     <script src="js/app/router.js"></script>
     <script src="js/app/dashboard/dashboard.js"></script>
     <script src="js/app/dashboard/dashboardCtrl.js"></script>
@@ -40,6 +54,9 @@
     <script src="js/app/dashboard/popular/popularCtrl.js"></script>
     <script src="js/app/dashboard/popular/popularService.js"></script>
     <script src="js/app/dashboard/deals/dealsCtrl.js"></script>
+    
+
+    
 
 </body>
 </html>

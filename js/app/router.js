@@ -29,7 +29,7 @@ config(function($stateProvider, $urlRouterProvider) {
         .state('costs.new', {
             url: '/new',
             templateUrl: 'partials/costs/costs-new.html',
-           controller: "latestCtrl"
+           //controller: "latestCtrl"
         })
 
         .state('costs.all', {
