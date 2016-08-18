@@ -1,4 +1,4 @@
-angular.module("catalogApp.dashboard.service", [])
+angular.module("walletApp.dashboard.service", [])
     .factory("dashboardService", function ($http) {
         function getData() {
             return $http.get('js/data/data.json').then(function (response) {

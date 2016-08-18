@@ -1,4 +1,4 @@
-angular.module("catalogApp.dashboard.popularPhonesService", [])
+angular.module("walletApp.dashboard.popularPhonesService", [])
     .factory("popularPhonesService", function (dashboardService) {
         var responseData;
         function getDataPopularPhones() {

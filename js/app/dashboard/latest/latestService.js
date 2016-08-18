@@ -1,4 +1,4 @@
-angular.module("catalogApp.dashboard.latestService", [])
+angular.module("walletApp.dashboard.latestService", [])
     .factory("latestService", function (dashboardService) {
         var responseData;
 

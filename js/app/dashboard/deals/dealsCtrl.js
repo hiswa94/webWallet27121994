@@ -1,4 +1,4 @@
-angular.module("catalogApp.dashboard.dealsController", ['catalogApp.dashboard.service'])
+angular.module("walletApp.dashboard.dealsController", ['walletApp.dashboard.service'])
     .controller('dealsController', ["$scope", '$rootScope', 'dashboardService', function ($scope, $rootScope, dashboardService) {
 
         $scope.message = 'test';

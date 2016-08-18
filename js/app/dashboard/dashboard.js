@@ -1,4 +1,4 @@
-angular.module("catalogApp.dashboard", [
-    "catalogApp.dashboard.ctrl",
-    "catalogApp.dashboard.service"
+angular.module("walletApp.dashboard", [
+    "walletApp.dashboard.ctrl",
+    "walletApp.dashboard.service"
 ]);

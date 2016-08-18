@@ -1,26 +1,60 @@
-<!--Date&time picker -->
-   <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-               <label for="datetimepicker2">Date and time:</label>
-                <div class='input-group date' id='datetimepicker2'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker2').datetimepicker({
-                    locale: 'ru'
-                });
-            });
-        </script>
+<!--Date picker -->
+<style>
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+</style>
+
+   <div ng-controller="DatepickerDemoCtrl">
+    <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+    <h4>Inline</h4>
+    <div style="display:inline-block; min-height:290px;">
+      <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
     </div>
-</div>
+
+    <hr />
+    <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+    <button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009, 7, 24)">2009-08-24</button>
+    <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+    <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
+
+    </div>
+<!--Time picker -->
+
+    <div ng-controller="TimepickerDemoCtrl">
+
+  <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+
+  <pre class="alert alert-info">Time is: {{mytime | date:'shortTime' }}</pre>
+
+  <div class="row"> 
+    <div class="col-xs-6">
+        Hours step is:
+      <select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select>
+    </div>
+    <div class="col-xs-6">
+        Minutes step is:
+      <select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select>
+    </div>
+  </div>
+
+  <hr>
+
+  <button type="button" class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
+  <button type="button" class="btn btn-default" ng-click="update()">Set to 14:00</button>
+  <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+
+    </div>
+
+
 
 <!--Category -->
 <div class="dropdown">

@@ -1,4 +1,4 @@
-angular.module('catalogApp', [ 'ui.router' , 'catalogApp.dashboard' ]).
+angular.module('walletApp', [ 'ui.router' , 'walletApp.dashboard' ]).
 config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/home');
@@ -29,7 +29,7 @@ config(function($stateProvider, $urlRouterProvider) {
         .state('costs.new', {
             url: '/new',
             templateUrl: 'partials/costs/costs-new.html',
-           //controller: "latestCtrl"
+          // controller: "DateAndTimePickerDemoCtrl"
         })
 
         .state('costs.all', {
