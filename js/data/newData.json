@@ -1,0 +1,54 @@
+[
+  {
+    "date": 9999999203,
+    "time": 23232323232,
+    "category": "food",
+    "sum"  : 15,
+    "coment" : "coment1"
+
+    
+  },
+  {
+    "date": 9999999203,
+    "time": 23232323232,
+    "category": "car",
+    "sum"  : 115,
+    "coment" : "coment2"
+  },
+  {
+    "date": 146744727,
+    "time": 23232323232,
+    "category": "medecine",
+    "sum"  : 35,
+    "coment" : "coment3"
+  },
+  {
+    "date": 1467440227,
+    "time": 23232323232,
+    "category": "entertainment",
+    "sum"  : 10,
+    "coment" : "coment4"
+  },
+  {
+    "date": 14674402037,
+    "time": 23232323232,
+    "category": "food",
+    "sum"  : 10,
+    "coment" : "coment5"
+  },
+  {
+    "date": 9999999203,
+    "time": 23232323232,
+    "category": "food",
+    "sum"  : 25,
+    "coment" : "coment6"
+  },
+  {
+
+    "date": 99999992037,
+    "time": 23232323232,
+    "category": food,
+    "sum"  : 35,
+    "coment" : "coment7"
+  }
+]
