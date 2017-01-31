@@ -1,35 +1,104 @@
-<!--Date picker -->
-<style>
-  .full button span {
-    background-color: limegreen;
-    border-radius: 32px;
-    color: black;
-  }
-  .partially button span {
-    background-color: orange;
-    border-radius: 32px;
-    color: black;
-  }
-</style>
+ <!--Date picker -->
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <style>
+            .full button span {
+            background-color: limegreen;
+            border-radius: 32px;
+            color: black;
+              }
+            .partially button span {
+            background-color: orange;
+            border-radius: 32px;
+            color: black;
+              }
+        </style>
 
-   <div ng-controller="DatepickerDemoCtrl">
-    <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+        <div ng-controller="DatepickerDemoCtrl">
+            
+            <h4>Date</h4>
+            <div class="row">
+               <div class="col-sm-12 col-md-6">
+                <div style="display:inline-block; min-height:290px;">
+                <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+                </div>
+                </div>
 
-    <h4>Inline</h4>
-    <div style="display:inline-block; min-height:290px;">
-      <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+                <div class="col-sm-12 col-md-6">
+               <pre class="alert alert-info">Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+               
+               <hr>
+               
+                  <button class="btn btn-defualt btn-xs" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  More instruments
+                </button>
+  
+               <div class="collapse" id="collapseExample">
+                  <div class="well">
+                    <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+                    <button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009, 7, 24)">2009-08-24</button>
+                    <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+                    <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+      </div>
     </div>
+</div>
+ <!--Time picker -->
 
-    <hr />
-    <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
-    <button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009, 7, 24)">2009-08-24</button>
-    <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
-    <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
-
+<div ng-controller="TimepickerDemoCtrl" class="container-fluid">
+    <div class="row">
+     
+      <div class="col-xs-12 col-md-12">
+          
+          
+          <div class="col-xs-12 col-md-6">
+          <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+          </div>
+          
+          <div class="col-xs-12 col-md-6" >
+          <pre class="alert alert-info">Time is:<em> {{mytime | date:'shortTime' }} </em></pre>
+              
+              <hr>
+         
+                 <button class="btn btn-defualt btn-xs" type="button" data-toggle="collapse" data-target="#collapseTimeInst" aria-expanded="false" aria-controls="collapseTimeInst">
+                  More instruments
+                </button>
+  
+               <div class="collapse" id="collapseTimeInst">
+                  <div class="well"> 
+               
+                <div class="col-xs-12 col-md-6">
+                    Hours step is:
+                    <select class="form-control" ng-model="hstep" ng-options="opt for opt in     options.hstep"></select>
+                </div>
+                
+                <div class="col-xs-12 col-md-6">
+                    Minutes step is:
+                    <select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select>
+                </div>
+                
+                
+                
+                  <button type="button" class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
+                  <button type="button" class="btn btn-default" ng-click="update()">Set to 14:00</button>
+                  <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+                </div>
+                </div>
+       </div>
+      </div>  
     </div>
+</div>
+
+
 <!--Time picker -->
 
-    <div ng-controller="TimepickerDemoCtrl">
+  <!--  <div ng-controller="TimepickerDemoCtrl">
 
   <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
 
@@ -54,9 +123,12 @@
 
     </div>
 
-
-
+-->
+ <hr>
 <!--Category -->
+<div class="container">
+<div class="row">
+    <div class="col-sm-12 col-md-6">
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
       <b>Category</b>
@@ -69,58 +141,36 @@
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> <em>Separated link</em> </a></li>
   </ul>
 </div>
+    </div>
 
-<!--Sum -->
-<div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-           <label for="sum">Sum:</label>
-            <div class="input-group input-group-sm">
-             <input type="text" class="form-control" id=sum placeholder="Введіть витрачену суму. Наприклад 99.99">
-             <span class="input-group-addon">$</span>
-            </div>
+    <!--Sum -->
+    <div class="col-sm-12 col-md-6">
+        <form class="form-inline">
+          <div class="form-group">
+               <label for="sum">Sum:</label>
+                <div class="input-group input-group-sm"  >
+                 <input type="text" class="form-control" id="sum" placeholder="For example 99.99 ">
+                 <span class="input-group-addon">$</span>
+                </div>
+          </div> 
+         </form>
+
+
+ </div> 
+
+<hr>
+    <!--Comments -->
+    
+    <div class="container-fluid">
+     <div class="row"></div>
+      <form role="form">
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <textarea class="form-control" rows="5" id="comment"></textarea>
         </div>
+      </form>
     </div>
 </div>
-
-
-<!--Comments -->
-<div class="container">
-  <form role="form">
-    <div class="form-group">
-      <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
-    </div>
-  </form>
-</div>
-
 <!--Buttons -->
 <a ui-sref="costs" class="btn btn-success">Add</a>
     <a ui-sref="costs" class="btn btn-danger">Cancel</a>
-
-<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-<!--<h2>Latest models</h2>
-
-<table class="table table-hover table-striped table-bordered">
-    <thead>
-    <tr>
-        <td>#</td>
-        <td>Name</td>
-        <td>Cost</td>
-        <td>Popular</td>
-        <td>Date</td>
-    </tr>
-    </thead>
-    <tbody>
-
-    <tr ng-repeat="latest in latestes">
-        <td>{{ $index }}</td>
-        <td>{{ latest.name }}</td>
-        <td>${{ latest.price }}</td>
-        <td>{{ latest.popular }}</td>
-        <td>{{ latest.date| date:'yyyy-MM-dd HH:mm:ss' }}</td>
-    </tr>
-
-    </tbody>
-</table>-->
