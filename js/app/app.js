@@ -12,7 +12,7 @@ config(function($stateProvider, $urlRouterProvider) {
         .state('home.new', {
             url: '/new',
             templateUrl: 'partials/home/home-new.html',
-            controller: "latestCtrl"
+            controller: "costsCtrl"
         })
 
         .state('home.all', {
@@ -35,7 +35,7 @@ config(function($stateProvider, $urlRouterProvider) {
         .state('costs.all', {
             url: '/all',
             templateUrl: 'partials/costs/costs-all.html',
-            controller: "popularPhonesCtrl"
+            controller: "costsCtrl"
              })
 
     .state('profits', {
@@ -46,13 +46,13 @@ config(function($stateProvider, $urlRouterProvider) {
         .state('profits.new', {
             url: '/new',
             templateUrl: 'partials/profits/profits-new.html',
-           controller: "latestCtrl"
+           controller: "costsCtrl"
         })
 
         .state('profits.all', {
             url: '/all',
             templateUrl: 'partials/profits/profits-all.html',
-           controller: "popularPhonesCtrl"
+           controller: "costsCtrl"
         })
 
     .state('balance', {
@@ -64,7 +64,7 @@ config(function($stateProvider, $urlRouterProvider) {
         .state('balance.all', {
             url: '/all',
             templateUrl: 'partials/balance/balance-all.html',
-            controller: "latestCtrl"
+            controller: "costsCtrl"
         })
 
         .state('about', {
@@ -91,7 +91,7 @@ angular.module("walletApp.dashboard", [
     "walletApp.dashboard.service",
     "walletApp.dashboard.Dateandtime"
 ]);
-angular.module("walletApp.dashboard.ctrl", ['walletApp.dashboard.service','walletApp.dashboard.dealsController','walletApp.dashboard.latestCtrl', 'walletApp.dashboard.popularPhonesCtrl', "walletApp.dashboard.latestService",
+angular.module("walletApp.dashboard.ctrl", ['walletApp.dashboard.service','walletApp.dashboard.dealsController','walletApp.dashboard.costsCtrl', 'walletApp.dashboard.popularPhonesCtrl', "walletApp.dashboard.costsService",
 "walletApp.dashboard.popularPhonesService"])
 .controller("dashboardCtrl", ["$scope", "dashboardService", function ($scope, dashboardService) {
         var ctrl = this;
@@ -101,7 +101,7 @@ angular.module("walletApp.dashboard.ctrl", ['walletApp.dashboard.service','walle
 angular.module("walletApp.dashboard.service", [])
     .factory("dashboardService", function ($http) {
         function getData() {
-            return $http.get('js/data/data.json').then(function (response) {
+            return $http.get('js/data/newData.json').then(function (response) {
                 return response.data;
             });
         }
@@ -109,18 +109,18 @@ angular.module("walletApp.dashboard.service", [])
         return {
             getData: getData };
     });
-angular.module("walletApp.dashboard.latestCtrl", ['walletApp.dashboard.service'])
-    .controller("latestCtrl", ["$scope", "latestService", function ($scope, latestService) {
-        $scope.latestes = [];
-        latestService.getDataLatest().then(function (response) {
-            $scope.latestes = response;
+angular.module("walletApp.dashboard.costsCtrl", ['walletApp.dashboard.service'])
+    .controller("costsCtrl", ["$scope", "costsService", function ($scope, costsService) {
+        $scope.costs = [];
+        costsService.getDataCosts().then(function (response) {
+            $scope.costs = response;
         });
     }]);
-angular.module("walletApp.dashboard.latestService", [])
-    .factory("latestService", function (dashboardService) {
+angular.module("walletApp.dashboard.costsService", [])
+    .factory("costsService", function (dashboardService) {
         var responseData;
 
-        function getDataLatest() {
+        function getDataCosts() {
            return dashboardService.getData().then(function (response) {
              var  sortData = _.sortBy(response, function(o) { return o.date; }).reverse();
 
@@ -128,7 +128,7 @@ angular.module("walletApp.dashboard.latestService", [])
             });
           }
 
-        return {getDataLatest: getDataLatest};
+        return {getDataCosts: getDataCosts};
     });
 angular.module("walletApp.dashboard.popularPhonesCtrl", ['walletApp.dashboard.service'])
     .controller("popularPhonesCtrl", ["$scope", "popularPhonesService", function ($scope, popularPhonesService) {

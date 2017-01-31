@@ -4,20 +4,23 @@
     <thead>
     <tr>
         <td>#</td>
-        <td>Name</td>
-        <td>Cost</td>
-        <td>Popular</td>
+        <td>Category</td>
+        <td>Sum</td>
+        <td>Comment</td>
         <td>Date</td>
+        <td>Time</td>
     </tr>
     </thead>
     <tbody>
 
-    <tr ng-repeat="popularPhone in popularPhones">
-        <td>{{ $index }}</td>
-        <td>{{ popularPhone.name }}</td>
-        <td>${{ popularPhone.price }}</td>
-        <td>{{ popularPhone.popular }}</td>
-        <td>{{ popularPhone.date| date:'yyyy-MM-dd HH:mm:ss' }}</td>
+    <tr ng-repeat="cost in costs">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ cost.category }}</td>
+        <td>${{ cost.sum }}</td>
+        <td>{{ cost.comment }}</td>
+        <td>{{ cost.date| date:'dd-MM-yyyy' }}</td>
+        <td>{{ cost.time| date:'shortTime'}}</td>
+        
     </tr>
 
     </tbody>
